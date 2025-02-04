@@ -1,18 +1,8 @@
 from django.db import models
-from django.urls import reverse
 from django.conf import settings
-from django.contrib.auth.models import User
 from markdownx.models import MarkdownxField 
-from django.utils import timezone  
-from markdownx.models import MarkdownxField 
-from django.utils import timezone
-from  embed_video.fields  import  EmbedVideoField   
 from home.models import EventYear
-from django_countries.fields import CountryField
-from PIL import Image
-from io import BytesIO
 import os
-from django.core.files.base import ContentFile
 from django.utils.text import slugify
 
 
