@@ -23,6 +23,7 @@ from django.views.static import serve
 from django.views.generic import RedirectView 
 
 
+
 from pyconafrica2019 import views
 
 urlpatterns = [
@@ -66,8 +67,10 @@ urlpatterns = [
 
 ] 
 if settings.DEBUG:
+    from debug_toolbar.toolbar import debug_toolbar_urls
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += debug_toolbar_urls()
 
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
