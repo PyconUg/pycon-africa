@@ -38,7 +38,9 @@ Run the server
 ```sh
 python manage.py runserver
 ```
-Log into the superuser account via [http://localhost/accounts/login]
+Log into the superuser account [http://localhost/accounts/login]
+Access the admin dashboard [http://127.0.0.1:8000/organizers/]
+Add an event year []
 
 ## We Develop with Github
 We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
