@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "tinymce",
     "sorl.thumbnail",
+    "debug_toolbar",
     #'newsletter',
     "markdownx",
     #'mdeditor',
@@ -108,6 +109,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+if DEBUG:
+    MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
 
 
