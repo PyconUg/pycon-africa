@@ -22,7 +22,7 @@ source .venv/bin/activate
 ```
 Install Requirements
 ```sh
-pip install dev.requirements.txt
+pip install -r dev.requirements.txt
 ```
 Create a `secrets.py` file in the `pyconafrica` folder
  - This will hold all the environment variables
