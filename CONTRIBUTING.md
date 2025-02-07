@@ -24,8 +24,19 @@ Install Requirements
 ```sh
 pip install -r dev.requirements.txt
 ```
+
 Create a `secrets.py` file in the `pyconafrica` folder
  - This will hold all the environment variables
+```
+  SCRETE_KEY='your_secret_key'
+  CLOUDINARY_URL='your_cloudinary_url'
+  CLOUDINARY_STORAGE = {
+      'CLOUD_NAME': 'your_cloud_name',
+      'API_KEY': 'your_api',
+      'API_SECRET': 'your_api_secret'
+  }
+  SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+```
 Run migrations
 ```sh
 python manage.py migrate
