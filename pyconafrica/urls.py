@@ -20,9 +20,6 @@ from django.urls import include, path, re_path
 from django.conf.urls import handler404, handler500  
 from django_robohash.views import robohash 
 from django.views.static import serve  
-from django.views.generic import RedirectView 
-
-
 
 from pyconafrica2019 import views
 

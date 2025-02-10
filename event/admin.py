@@ -1,6 +1,5 @@
 # Core Django imports.
 from __future__ import unicode_literals
-import imp 
 from django.contrib import admin
 from django.contrib.admin.options import TabularInline, StackedInline
 
