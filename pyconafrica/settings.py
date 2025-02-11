@@ -23,6 +23,7 @@ load_dotenv()
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
 DEBUG=os.getenv("DEBUG")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
