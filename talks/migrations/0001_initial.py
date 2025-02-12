@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('home', '0009_alter_eventyear_id_alter_pyconevent_id'),
+        ('home', '0008_pyconevent'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
