@@ -11,25 +11,28 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
 
-try:
-    from .secrets import *
-except ImportError:
-    raise Exception(
-        "A secrets.py file is required to run this project, if not provided contact Mannie Young - https://twitter.com/mawy_7"
-    )
+load_dotenv()
 
+SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+
+DEBUG=os.getenv("DEBUG")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,9 +47,9 @@ LOGOUT_REDIRECT_URL = "/"
 
 INSTALLED_APPS = [
     "grappelli",
-    "cloudinary",
-    "cloudinary_storage",
-    "gamma_cloudinary",
+    # "cloudinary",
+    # "cloudinary_storage",
+    # "gamma_cloudinary",
     "django.contrib.admin",
     'django.contrib.sites',
     "django.contrib.auth",
@@ -110,10 +113,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+DEBUG = True
+
+SECRET_KEY="django-insecure-7!6"
+
 if DEBUG:
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-
-
 
 ROOT_URLCONF = "pyconafrica.urls"
 
@@ -343,3 +348,10 @@ MARKDOWNIFY_WHITELIST_ATTRS = [
     "alt",
     "class",
 ]
+
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
+}
