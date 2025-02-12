@@ -53,10 +53,12 @@ packaging==24.2
 pilkit==3.0
 pillow==11.1.0
 Pygments==2.19.1
+python-dotenv==1.0.1
 python-magic==0.4.27
 pytz==2024.1
 PyYAML==6.0.2
 requests==2.32.3
+setuptools==75.8.0
 six==1.17.0
 snowballstemmer==2.2.0
 sorl-thumbnail==12.10.0
