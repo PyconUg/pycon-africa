@@ -22,7 +22,7 @@ def get_item(dictionary, key):
 
 
 
-@register.inclusion_tag('2024/schedule/schedule_home.html', takes_context=True)
+@register.inclusion_tag('2025/schedule/schedule_home.html', takes_context=True)
 def schedule_preview(context, year, limit=3):
     request = context['request']
     event_year = EventYear.objects.get(year=year)

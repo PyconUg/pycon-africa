@@ -14,7 +14,6 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'location' )  
     ordering = ['name', '-date_created', ]   
     #inlines = [SponsorInline]
-        
 
 # Registers the Event model at the admin backend.
 admin.site.register(Event, EventAdmin)
