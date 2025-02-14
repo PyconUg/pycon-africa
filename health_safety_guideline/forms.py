@@ -19,7 +19,7 @@ from django.utils.translation import gettext_lazy as _
 # Third Parties
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
-from django_recaptcha.fields import ReCaptchaField
+# from django_recaptcha.fields import ReCaptchaField
 
 
 User = UserModel()
@@ -31,7 +31,7 @@ from .models import Health_Safety_Guideline
 
 
 class Health_Safety_GuidelineForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = Health_Safety_Guideline

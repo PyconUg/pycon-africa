@@ -21,8 +21,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit 
   
 from django_countries.widgets import CountrySelectWidget  
-from django_recaptcha.fields import ReCaptchaField 
-from django_recaptcha.widgets import ReCaptchaV2Invisible
+# from django_recaptcha.fields import ReCaptchaField  # Comment out or remove
 
 User = UserModel()
 
@@ -44,7 +43,8 @@ class RegistrationForm(UserCreationForm):
     """
     required_css_class = 'required'
     email = forms.EmailField(label=_("E-mail"))
-    captcha = ReCaptchaField()
+    # Comment out captcha
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = User
@@ -124,7 +124,7 @@ class ResendActivationForm(forms.Form):
 
 
 class UpdateForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = Profile
@@ -140,7 +140,7 @@ class UpdateForm(forms.ModelForm):
         self.helper.add_input(Submit('update', 'Update Profile'))
 
 class UserForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = User
@@ -155,7 +155,7 @@ class UserForm(forms.ModelForm):
 
 
 class PasswordForm(PasswordChangeForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     def __init__(self, user, *args, **kwargs):
         self.user = user

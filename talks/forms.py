@@ -3,12 +3,12 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, Field
 from .models import Document  
-from django_recaptcha.fields import ReCaptchaField 
-from django_recaptcha.widgets import ReCaptchaV2Invisible  
+# from django_recaptcha.fields import ReCaptchaField  # Comment out or remove
+# from django_recaptcha.widgets import ReCaptchaV2Invisible  
 from .models import * 
 
 class ProposalForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()  # Comment out or remove
 
     class Meta:
         model = Proposal
@@ -39,7 +39,7 @@ class ProposalResponseForm(forms.ModelForm):
         
 
 class UpdateForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = Proposal
@@ -101,7 +101,7 @@ class ReviewForm(forms.ModelForm):
 
 
 class DocumentForm(forms.ModelForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         model = Document
